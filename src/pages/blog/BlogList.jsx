@@ -16,15 +16,15 @@ import {
 import CommonSidebar from "./components/CommonSidebar";
 
 function BlogList() {
-  const [Posts, setPosts] = useState();
+
   const [search, setSearch] = useState("");
   const [selectedTags, setSelectedTags] = useState("");
   const [allPosts, setAllPosts] = useState({
     posts: [],
   });
   const { data: tags, loading } = useGetPostTagsListQuery();
-  const [searchPosts, {loading:isLodingBySearch}] = useLazyGetSearchPostsQuery();
-  const [getPostByTagName, {loading:isLoadingZByTags}] = useLazyGetPostByTagQuery();
+  const [searchPosts, {loading:isLoadingBySearch}] = useLazyGetSearchPostsQuery();
+  const [getPostByTagName, {loading:isLoadingByTags}] = useLazyGetPostByTagQuery();
 
   useEffect(() => {
     searchPosts({
@@ -45,7 +45,7 @@ function BlogList() {
       });
   }, [selectedTags]);
 
-  const loadPosts = () => {};
+ 
 
   return (
     <div>
@@ -67,9 +67,11 @@ function BlogList() {
         </div>
         <div className="flex gap-10 ">
           <div className="pb-10 px-10  flex-[70%] flex max-h-[600px] flex-wrap overflow-y-auto ">
+      
             {allPosts?.posts.length == 0 && (
               <div className="w-full ">No Results</div>
             )}
+            {(loading || isLoadingByTags || isLoadingBySearch) && <h2>Loading...</h2>}
             {allPosts?.posts?.map((post, item) => {
               return <VerticalCard data={post} />;
             })}
