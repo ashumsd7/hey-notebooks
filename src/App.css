@@ -1,0 +1,107 @@
+/* .s-container {
+  @apply px-4 sm:px-10 lg:px-20;
+} */
+.card {
+  @apply border shadow-none;
+}
+.react-select__option--is-focused,
+.stepper-step-ring {
+  color: white;
+}
+
+.react-select__control--is-focused.react-select__control {
+  --tw-shadow-color: transparent !important;
+}
+.user-management-select-input :nth-child(3) {
+  border: none;
+}
+
+.drawer-backdrop {
+  z-index: 99;
+}
+.drawer-backdrop-open {
+  z-index: 999;
+}
+.quiz-month-picker .input-group {
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+.quiz-month-picker .input-group input {
+  display: none;
+}
+.quiz-month-picker .input-group svg {
+  display: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.accordion {
+  margin-top: 1rem;
+}
+
+.itemBtn {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: left;
+  color: #007bff;
+  background-color: transparent;
+  border: none;
+}
+
+.itemBtn:hover {
+  background-color: #f3f3f3;
+}
+
+.itemBtnExpanded {
+  background-color: #e7e7e7;
+}
+
+.itemContent {
+  transition: height 0.25s cubic-bezier(0, 0, 0, 1);
+}
+
+.itemPanel {
+  padding: 1rem;
+}
+
+.chevron {
+  margin-left: auto;
+  transition: transform 0.25s cubic-bezier(0, 0, 0, 1);
+}
+
+.itemBtnExpanded .chevron {
+  transform: rotate(180deg);
+}
+
+input[type="checkbox"] {
+  border-color: #333;
+  border: 2px solid #333;
+}
+
+.pagination-pages-item-base,
+.pagination-item-base,
+.pagination-next-btn-base {
+  border: none;
+}
+.pagination-pages-item-default-active {
+  border-radius: 4px;
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.selected:hover {
+  background-color: #004dd1 !important;
+  border-color: #004dd1 !important;
+  color: white !important;
+}
